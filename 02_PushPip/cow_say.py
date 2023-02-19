@@ -4,6 +4,7 @@ from cowsay import cowsay, list_cows
 parser = argparse.ArgumentParser()
 parser.add_argument('-e', type=str)
 parser.add_argument('-T', type=str)
+parser.add_argument('-W', type=int)
 parser.add_argument('-b', action='store_true')
 parser.add_argument('-d', action='store_true')
 parser.add_argument('-g', action='store_true')
@@ -21,6 +22,8 @@ if args.e is not None:
     params['eyes'] = args.e[:2]
 if args.T is not None:
     params['tongue'] = args.T[:2]
+if args.W is not None:
+    params['width'] = args.W
 
 args_dict = vars(args)
 preset_list = 'bdgpstwy'
